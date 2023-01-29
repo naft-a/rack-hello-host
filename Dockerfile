@@ -1,6 +1,7 @@
 FROM ruby:3.1.0-alpine AS base
 RUN apk --upgrade add build-base vim
 
+RUN addgroup -g 1000 hello
 RUN adduser -u 1000 -s /bin/bash -h /opt/hello -S hello
 USER hello
 RUN mkdir -p /opt/hello/app /opt/hello/.bundle
